@@ -17,5 +17,19 @@ troubleshooting- pods,svc,workernode,masternode
  2.  workernode  kube-proxy  troubleshooting 
      step 1 :  kubectl   pods   -A 
               check  the  logs  first  and  perform the action 
-                              
+
+3.   control plane  failure 
+          step 1 : k get  pods -A 
+                  k  describe  pod  -n  <failure pod>
+                  K  logs <pod name , namespace >  
+                   check   and update config  path  
+      case 2:  deployment  is  not  scaling 
+               inspect the  logs  and  check the  volume  and volume-mounts 
+                K  logs <pod name , namespace >              
+
+
+
+        
+
+
 
