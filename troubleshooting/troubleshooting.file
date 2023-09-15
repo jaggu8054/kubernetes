@@ -1,0 +1,21 @@
+troubleshooting- pods,svc,workernode,masternode
+
+1.  worker-node
+    step 1: first  describe  the  workernode
+             false  and  true  in the   workernode  process 
+    step 2 : ssh  to  workernode
+             journalctl  -u  kubelet  -f  -> check the  life  traffic  and  perform the action 
+         case 1:  kubelet  connection  to api  miss match 
+                  exit  from the  worker  and   navigate  to  /etc/kubernetes/manifest/kube-api 
+                  check the  api  ip and the  port   and  log  back to the   workernode  -  /etc/kubernetes/kubelet-config
+                  file 
+         case 2: kubelet wrong  certificate 
+                ssh  to workernode
+                journalctl  -u  kubelet  -f  -> check the  life  traffic  and  perform the action 
+                 navigate to  var/lib/kubelet
+
+ 2.  workernode  kube-proxy  troubleshooting 
+     step 1 :  kubectl   pods   -A 
+              check  the  logs  first  and  perform the action 
+                              
+
